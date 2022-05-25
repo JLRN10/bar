@@ -1,9 +1,23 @@
+import 'package:bar/models/user.dart';
 import 'package:bar/routes/routes.dart';
 import 'package:bar/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'provider/user_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (context) => UserProvider(),
+        ), // Provider para Manejo del Usario Mesero
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

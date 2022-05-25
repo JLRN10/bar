@@ -1,8 +1,9 @@
-import 'package:bar/screen/login.dart';
 import 'package:flutter/material.dart';
+
+import '../screen/main_screen.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes() {
   return <String, WidgetBuilder>{
-    '/movies': (BuildContext context) => LoginScreen(),
+    '/main': (BuildContext context) => MainScreen(),
   };
 }

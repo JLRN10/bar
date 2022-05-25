@@ -1,0 +1,3 @@
+class BebidaModelo {
+  String nombre = '';
+}

@@ -40,10 +40,13 @@ dependencies:
   http: ^0.13.4                   #Hacer peticiones Future de http (API´s)
   firebase_auth: ^3.3.18          #Permite la validacion por logeo desde firebase
   cloud_firestore: ^3.1.15        #Permite el almacenamiento en firebase
-  provider: ^6.0.2                #
   google_sign_in: ^5.3.1          #Permite el logeo con cuentas de google
-  
-  
+  firebase_core: ^1.4.0           #
+  font_awesome_flutter: ^9.0.0    #Libreria de Iconos
+  flutter_facebook_auth: '^3.5.0' #Autentificacion con Facebook
+  flutter_signin_button: ^2.0.0   #Botones de Social Login
+  provider: ^5.0.0                #Gestor de Estados de los widges
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
