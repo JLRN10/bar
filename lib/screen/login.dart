@@ -95,7 +95,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             onPressed: () async {
                               var email =
                                   await Authenticator.signInWithFacebook();
-                              print(email.user?.displayName);
+                              var name = email.user?.displayName;
+                              var id = email.user?.email;
+                              userProvider.name = '' + name!;
+                              //print(email.user?.displayName);
+                              Navigator.pushNamed(context, '/main');
                             },
                           ),
                           SizedBox(
