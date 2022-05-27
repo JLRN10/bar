@@ -1,4 +1,5 @@
 import 'package:bar/models/user.dart';
+import 'package:bar/provider/carrito_provider.dart';
 import 'package:bar/routes/routes.dart';
 import 'package:bar/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,10 @@ void main() {
         ChangeNotifierProvider(
           lazy: false,
           create: (context) => UserProvider(),
+        ),
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (context) => CarritoProvider(),
         ), // Provider para Manejo del Usario Mesero
       ],
       child: const MyApp(),
