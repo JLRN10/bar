@@ -80,7 +80,7 @@ class _DetailCocktailScreenState extends State<DetailCocktailScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                _buttonsBuy(context, cocktail.strDrink),
+                _buttonsBuy(context, cocktail),
                 Container(
                   margin: EdgeInsets.only(left: 20, top: 10),
                   child: ClipRRect(
@@ -152,7 +152,7 @@ class _DetailCocktailScreenState extends State<DetailCocktailScreen> {
               ],
             ),
             Container(
-              height: 285,
+              height: 585,
             ),
           ],
         ))
@@ -160,8 +160,9 @@ class _DetailCocktailScreenState extends State<DetailCocktailScreen> {
     );
   }
 
-  Widget _buttonsBuy(BuildContext context, String? cocktail) {
+  Widget _buttonsBuy(BuildContext context, CocktailModel cocktail) {
     final cantidad = Provider.of<CarritoProvider>(context);
+
     return Opacity(
       opacity: 0.9,
       child: Container(
@@ -244,6 +245,16 @@ class _DetailCocktailScreenState extends State<DetailCocktailScreen> {
                               onPressed: () {
                                 //Agregar al provider
                                 //Moverte al Carrito
+                                cantidad.id =
+                                    (cocktail.idDrink?.isEmpty ?? true)
+                                        ? ""
+                                        : cocktail.idDrink.toString();
+                                cantidad.name =
+                                    (cocktail.strDrink?.isEmpty ?? true)
+                                        ? ""
+                                        : cocktail.strDrink.toString();
+                                cantidad.cantidad = _amt;
+                                print(cantidad.cantidad);
                                 Navigator.pop(context, '/carrito');
                               },
                               child: const Text('OK'),
